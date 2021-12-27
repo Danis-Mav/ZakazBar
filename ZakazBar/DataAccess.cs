@@ -7,7 +7,7 @@ using System.Collections.ObjectModel;
 
 namespace ZakazBar
 {
-    public class DataAccess
+    public static class DataAccess
     {
         public static List<NoAlk> GetNoAlk()
         {
@@ -92,7 +92,7 @@ namespace ZakazBar
             return ALKO;
         }
 
-        public static List<ALKO> GetALKOO(int Id_alko)
+        public static List<ALKO> GetALKO(int Id_alko)
         {
             List<ALKO> users = GetALKO();
             return users.Where(a => a.Id_alko == Id_alko).ToList();

@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="2220a4a4b4944368a02631e24ce8d4ce" Name="Diagram1">
-        <EntityTypeShape EntityType="barModel.ALKO" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="barModel.ALKO" Width="1.5" PointX="9.625" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="barModel.Dish" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="barModel.NoAlk" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="barModel.Position" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
