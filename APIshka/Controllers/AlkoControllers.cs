@@ -9,20 +9,26 @@ namespace ApiTattoo.Controllers
     [ApiController]
     public class AlkoControllers : Controller
     {
-        [HttpGet]
+    [HttpGet]
         public List<ALKO> Get()
         {
             return DataAccess.GetALKO();
         }
-
         [HttpGet("{Id_alko}")]
-        public ActionResult<AlkoControllers> Get(int Id_alko)
+        public ActionResult<ALKO> Get(int Id_alko)
         {
             var result = DataAccess.GetALKO(Id_alko);
             if (result == null)
                 return NotFound();
 
-            return(result);
+            return result;
+        }
+        [HttpPost]
+        public IActionResult Create(ALKO Id_alko)
+        {
+            DataAccess.AddNewALKO(Id_alko);
+            return NoContent();
         }
     }
+   
 }

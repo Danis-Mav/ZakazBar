@@ -92,10 +92,10 @@ namespace ZakazBar
             return ALKO;
         }
 
-        public static List<ALKO> GetALKO(int Id_alko)
+        public static ALKO GetALKO(int Id_alko)
         {
             List<ALKO> users = GetALKO();
-            return users.Where(a => a.Id_alko == Id_alko).ToList();
+            return users.Where(a => a.Id_alko == Id_alko).FirstOrDefault();
         }
 
         public static ALKO GetALKO(string Name)
