@@ -25,12 +25,10 @@ namespace ZakazBar
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ALKO> ALKO { get; set; }
-        public virtual DbSet<Dish> Dish { get; set; }
-        public virtual DbSet<NoAlk> NoAlk { get; set; }
         public virtual DbSet<Position> Position { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<zakaz> zakaz { get; set; }
         public virtual DbSet<Employee> Employee { get; set; }
+        public virtual DbSet<ALKO> ALKO { get; set; }
     }
 }

@@ -9,72 +9,6 @@ namespace ZakazBar
 {
     public static class DataAccess
     {
-        public static List<NoAlk> GetNoAlk()
-        {
-            List<NoAlk> alk = new List<NoAlk>(DBconnection.connection.NoAlk);
-            List<NoAlk> noAlks = new List<NoAlk>();
-            foreach (var t in alk)
-            {
-                noAlks.Add(
-                new NoAlk
-                {
-                    id_NoAlk = t.id_NoAlk,
-                    Name = t.Name,
-                    Price = t.Price,
-                });
-            }
-            return noAlks;
-        }
-
-        public static List<NoAlk> GetNoAlkk(int id_NoAlk)
-        {
-            List<NoAlk> users = GetNoAlk();
-            return users.Where(a => a.id_NoAlk == id_NoAlk).ToList();
-        }
-
-        public static NoAlk GetUserss(string Name)
-        {
-            List<NoAlk> userss = GetNoAlk();
-            return userss.Where(t => t.Name == Name).FirstOrDefault();
-        }
-
-        public static bool AddNewNoAlk(NoAlk users)
-        {
-            try
-            {
-                DBconnection.connection.NoAlk.Add(users);
-                DBconnection.connection.SaveChanges();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        public static void DeleteNoAlk(int id_NoAlk)
-        {
-            List<NoAlk> users = GetNoAlk();
-            var user = users.Where(t => t.id_NoAlk == id_NoAlk).FirstOrDefault();
-
-            DBconnection.connection.NoAlk.Remove(user);
-            DBconnection.connection.SaveChanges();
-        }
-
-        public static void UpdateNoAlk(int id_NoAlk, NoAlk users)
-        {
-
-            DBconnection.connection.NoAlk.SingleOrDefault(t => t.id_NoAlk == id_NoAlk);
-            DBconnection.connection.SaveChanges();
-
-        }
-
-        public static void DeleteNoAlk(NoAlk users)
-        {
-            DBconnection.connection.NoAlk.Remove(users);
-            DBconnection.connection.SaveChanges();
-        }
-        /*----------------------------------------------------------------------------------------------------*/
         public static List<ALKO> GetALKO()
         {
             List<ALKO> alk = new List<ALKO>(DBconnection.connection.ALKO);
@@ -139,72 +73,7 @@ namespace ZakazBar
             DBconnection.connection.ALKO.Remove(users);
             DBconnection.connection.SaveChanges();
         }
-        /*----------------------------------------------------------------------------------------------------*/
-        public static List<Dish> GetDish()
-        {
-            List<Dish> users = new List<Dish>(DBconnection.connection.Dish);
-            List<Dish> userss = new List<Dish>();
-            foreach (var t in users)
-            {
-                userss.Add(
-                new Dish
-                {
-                    if_dish = t.if_dish,
-                    Name = t.Name,
-                    Price = t.Price,
-                });
-            }
-            return userss;
-        }
-
-        public static List<Dish> GetUserss(int idDish)
-        {
-            List<Dish> users = GetDish();
-            return users.Where(a => a.if_dish == idDish).ToList();
-        }
-
-        public static Dish GetDishh(string Name)
-        {
-            List<Dish> userss = GetDish();
-            return userss.Where(t => t.Name == Name).FirstOrDefault();
-        }
-
-        public static bool AddNewDish(Dish users)
-        {
-            try
-            {
-                DBconnection.connection.Dish.Add(users);
-                DBconnection.connection.SaveChanges();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        public static void DeleteDish(int idDish)
-        {
-            List<Dish> users = GetDish();
-            var user = users.Where(t => t.if_dish == idDish).FirstOrDefault();
-
-            DBconnection.connection.Dish.Remove(user);
-            DBconnection.connection.SaveChanges();
-        }
-
-        public static void UpdateDish(int idDish, Dish users)
-        {
-
-            DBconnection.connection.Dish.SingleOrDefault(t => t.if_dish == idDish);
-            DBconnection.connection.SaveChanges();
-
-        }
-
-        public static void DeleteDish(Dish users)
-        {
-            DBconnection.connection.Dish.Remove(users);
-            DBconnection.connection.SaveChanges();
-        }
+       
         /*----------------------------------------------------------------------------------------------------*/
         public static List<zakaz> Getzakaz()
         {

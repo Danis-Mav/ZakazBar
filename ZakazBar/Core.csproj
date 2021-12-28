@@ -58,9 +58,6 @@
     </Compile>
     <Compile Include="DataAccess.cs" />
     <Compile Include="DBconnection.cs" />
-    <Compile Include="Dish.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Employee.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -78,9 +75,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="NoAlk.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Position.cs">
       <DependentUpon>Model1.tt</DependentUpon>

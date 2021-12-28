@@ -13,14 +13,6 @@
           <Property Name="Name" Type="varchar" MaxLength="50" />
           <Property Name="Price" Type="int" />
         </EntityType>
-        <EntityType Name="Dish">
-          <Key>
-            <PropertyRef Name="if_dish" />
-          </Key>
-          <Property Name="if_dish" Type="int" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" />
-          <Property Name="Price" Type="int" />
-        </EntityType>
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="ID" />
@@ -29,14 +21,6 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="age" Type="int" />
           <Property Name="id_position" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="NoAlk">
-          <Key>
-            <PropertyRef Name="id_NoAlk" />
-          </Key>
-          <Property Name="id_NoAlk" Type="int" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" />
-          <Property Name="Price" Type="int" />
         </EntityType>
         <EntityType Name="Position">
           <Key>
@@ -77,9 +61,7 @@
         </Association>
         <EntityContainer Name="Хранилище barModelContainer">
           <EntitySet Name="ALKO" EntityType="Self.ALKO" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Dish" EntityType="Self.Dish" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="NoAlk" EntityType="Self.NoAlk" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="zakaz" EntityType="Self.zakaz" Schema="dbo" store:Type="Tables" />
@@ -92,30 +74,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="barModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="ALKO">
-          <Key>
-            <PropertyRef Name="Id_alko" />
-          </Key>
-          <Property Name="Id_alko" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Price" Type="Int32" />
-        </EntityType>
-        <EntityType Name="Dish">
-          <Key>
-            <PropertyRef Name="if_dish" />
-          </Key>
-          <Property Name="if_dish" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Price" Type="Int32" />
-        </EntityType>
-        <EntityType Name="NoAlk">
-          <Key>
-            <PropertyRef Name="id_NoAlk" />
-          </Key>
-          <Property Name="id_NoAlk" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Price" Type="Int32" />
-        </EntityType>
         <EntityType Name="Position">
           <Key>
             <PropertyRef Name="id_position" />
@@ -143,9 +101,6 @@
           <Property Name="Price" Type="Int32" />
         </EntityType>
         <EntityContainer Name="barEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ALKO" EntityType="Self.ALKO" />
-          <EntitySet Name="Dish" EntityType="Self.Dish" />
-          <EntitySet Name="NoAlk" EntityType="Self.NoAlk" />
           <EntitySet Name="Position" EntityType="Self.Position" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="zakaz" EntityType="Self.zakaz" />
@@ -154,6 +109,7 @@
             <End Role="Position" EntitySet="Position" />
             <End Role="Employee" EntitySet="Employee" />
           </AssociationSet>
+          <EntitySet Name="ALKO" EntityType="barModel.ALKO" />
         </EntityContainer>
         <EntityType Name="Employee">
           <Key>
@@ -177,39 +133,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="ALKO">
+          <Key>
+            <PropertyRef Name="Id_alko" />
+          </Key>
+          <Property Name="Id_alko" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Хранилище barModelContainer" CdmEntityContainer="barEntities">
-          <EntitySetMapping Name="ALKO">
-            <EntityTypeMapping TypeName="barModel.ALKO">
-              <MappingFragment StoreEntitySet="ALKO">
-                <ScalarProperty Name="Id_alko" ColumnName="Id_alko" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Dish">
-            <EntityTypeMapping TypeName="barModel.Dish">
-              <MappingFragment StoreEntitySet="Dish">
-                <ScalarProperty Name="if_dish" ColumnName="if_dish" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NoAlk">
-            <EntityTypeMapping TypeName="barModel.NoAlk">
-              <MappingFragment StoreEntitySet="NoAlk">
-                <ScalarProperty Name="id_NoAlk" ColumnName="id_NoAlk" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Position">
             <EntityTypeMapping TypeName="barModel.Position">
               <MappingFragment StoreEntitySet="Position">
@@ -245,6 +182,15 @@
                 <ScalarProperty Name="age" ColumnName="age" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ALKO">
+            <EntityTypeMapping TypeName="barModel.ALKO">
+              <MappingFragment StoreEntitySet="ALKO">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id_alko" ColumnName="Id_alko" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
