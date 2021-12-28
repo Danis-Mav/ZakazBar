@@ -51,15 +51,6 @@ namespace ZakazBar
             }
         }
 
-        public static void DeleteALKO(int Id_alko)
-        {
-            List<ALKO> users = GetALKO();
-            var user = users.Where(t => t.Id_alko == Id_alko).FirstOrDefault();
-
-            DBconnection.connection.ALKO.Remove(user);
-            DBconnection.connection.SaveChanges();
-        }
-
         public static void UpdateALKO(int Id_alko, ALKO users)
         {
 
@@ -68,12 +59,19 @@ namespace ZakazBar
 
         }
 
-        public static void DeleteALKO(ALKO users)
+        public static void DeleteALKO(string name)
         {
-            DBconnection.connection.ALKO.Remove(users);
+            ALKO deletALKO = DBconnection.connection.ALKO.FirstOrDefault<ALKO>(p => p.Name == name);
+            DBconnection.connection.ALKO.Remove(deletALKO);
             DBconnection.connection.SaveChanges();
         }
-       
+        public static void DeleteALKO(int id)
+        {
+            ALKO deletAuto = DBconnection.connection.ALKO.FirstOrDefault<ALKO>(p => p.Id_alko == id);
+            DBconnection.connection.ALKO.Remove(deletAuto);
+            DBconnection.connection.SaveChanges();
+        }
+
         /*----------------------------------------------------------------------------------------------------*/
         public static List<zakaz> Getzakaz()
         {
@@ -117,16 +115,6 @@ namespace ZakazBar
                 return false;
             }
         }
-
-        public static void Deletezakaz(int ID)
-        {
-            List<zakaz> users = Getzakaz();
-            var user = users.Where(t => t.ID == ID).FirstOrDefault();
-
-            DBconnection.connection.zakaz.Remove(user);
-            DBconnection.connection.SaveChanges();
-        }
-
         public static void Updatezakaz(int ID, zakaz users)
         {
 
@@ -135,9 +123,16 @@ namespace ZakazBar
 
         }
 
-        public static void Deletezakaz(zakaz users)
+        public static void Deletezakaz(string name)
         {
-            DBconnection.connection.zakaz.Remove(users);
+            zakaz deletALKO = DBconnection.connection.zakaz.FirstOrDefault<zakaz>(p => p.item == name);
+            DBconnection.connection.zakaz.Remove(deletALKO);
+            DBconnection.connection.SaveChanges();
+        }
+        public static void Deletezakaz(int id)
+        {
+            zakaz deletAuto = DBconnection.connection.zakaz.FirstOrDefault<zakaz>(p => p.ID == id);
+            DBconnection.connection.zakaz.Remove(deletAuto);
             DBconnection.connection.SaveChanges();
         }
         /*----------------------------------------------------------------------------------------------------*/
@@ -185,15 +180,6 @@ namespace ZakazBar
             }
         }
 
-        public static void DeleteEmployee(int ID)
-        {
-            List<Employee> users = GetEmployee();
-            var user = users.Where(t => t.ID == ID).FirstOrDefault();
-
-            DBconnection.connection.Employee.Remove(user);
-            DBconnection.connection.SaveChanges();
-        }
-
         public static void UpdateEmployee(int ID, Employee users)
         {
 
@@ -201,10 +187,16 @@ namespace ZakazBar
             DBconnection.connection.SaveChanges();
 
         }
-
-        public static void DeleteEmployee(Employee users)
+        public static void DeleteEmployee(string name)
         {
-            DBconnection.connection.Employee.Remove(users);
+            Employee deletALKO = DBconnection.connection.Employee.FirstOrDefault<Employee>(p => p.Name == name);
+            DBconnection.connection.Employee.Remove(deletALKO);
+            DBconnection.connection.SaveChanges();
+        }
+        public static void DeleteEmployee(int id)
+        {
+            Employee deletAuto = DBconnection.connection.Employee.FirstOrDefault<Employee>(p => p.ID == id);
+            DBconnection.connection.Employee.Remove(deletAuto);
             DBconnection.connection.SaveChanges();
         }
         /*----------------------------------------------------------------------------------------------------*/
@@ -250,15 +242,6 @@ namespace ZakazBar
             }
         }
 
-        public static void DeletePosition(int id_position)
-        {
-            List<Position> users = GetPosition();
-            var user = users.Where(t => t.id_position == id_position).FirstOrDefault();
-
-            DBconnection.connection.Position.Remove(user);
-            DBconnection.connection.SaveChanges();
-        }
-
         public static void UpdatePosition(int id_position, Employee users)
         {
 
@@ -267,9 +250,16 @@ namespace ZakazBar
 
         }
 
-        public static void DeletePosition(Position users)
+        public static void DeletePosition(string name)
         {
-            DBconnection.connection.Position.Remove(users);
+            Position deletALKO = DBconnection.connection.Position.FirstOrDefault<Position>(p => p.title == name);
+            DBconnection.connection.Position.Remove(deletALKO);
+            DBconnection.connection.SaveChanges();
+        }
+        public static void DeletePosition(int id)
+        {
+            Position deletAuto = DBconnection.connection.Position.FirstOrDefault<Position>(p => p.id_position == id);
+            DBconnection.connection.Position.Remove(deletAuto);
             DBconnection.connection.SaveChanges();
         }
 
