@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "ZakazBar\Core.cspro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIshka", "APIshka\APIshka.csproj", "{09907F10-9AE6-43CE-9B58-A0FE0730B8D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppZakaz", "ConsoleAppZakaz\ConsoleAppZakaz.csproj", "{190CFC60-BFA7-4F56-887E-D315D28DF898}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppZakaz", "ConsoleAppZakaz\ConsoleAppZakaz.csproj", "{190CFC60-BFA7-4F56-887E-D315D28DF898}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

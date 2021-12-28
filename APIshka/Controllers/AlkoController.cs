@@ -7,10 +7,10 @@ namespace ApiTattoo.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AlkoControllers : Controller
+    public class AlkoController : Controller
     {
-    [HttpGet]
-        public List<ALKO> Get()
+        [HttpGet]
+        public IEnumerable<ALKO> Get()
         {
             return DataAccess.GetALKO();
         }
