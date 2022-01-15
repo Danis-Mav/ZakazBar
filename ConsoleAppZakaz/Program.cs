@@ -45,12 +45,12 @@ namespace ConsoleAppZakaz
                 case "alk":
                     DataAccess.AddNewALKO
                     (
-                             new ALKO
-                            {
-                                Id_alko = int.Parse(args[2]),
-                                Name = args[3],
-                                Price = int.Parse(args[4])
-                            }
+                        new ALKO
+                        {
+                            Id_alko = int.Parse(args[2]),
+                            Name = args[3],
+                            Price = int.Parse(args[4])
+                        }
                     );
                     break;
                 case "Employee":
