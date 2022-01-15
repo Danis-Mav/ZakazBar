@@ -7,6 +7,8 @@ using System.Collections.ObjectModel;
 
 namespace ZakazBar
 {
+
+    //new com
     public static class DataAccess
     {
         public static List<ALKO> GetALKO()
