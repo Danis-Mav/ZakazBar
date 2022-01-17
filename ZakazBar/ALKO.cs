@@ -12,7 +12,7 @@ namespace ZakazBar
     using System;
     using System.Collections.Generic;
     
-    public partial class ALKO
+    public partial class ALKO //Неправильное наименование класса (Некритично)
     {
         public int Id_alko { get; set; }
         public string Name { get; set; }

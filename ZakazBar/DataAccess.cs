@@ -7,7 +7,7 @@ using System.Collections.ObjectModel;
 
 namespace ZakazBar
 {
-
+    //бессмысленные комментарии
     //new commit
     public static class DataAccess
     {
@@ -75,7 +75,7 @@ namespace ZakazBar
         }
 
         /*----------------------------------------------------------------------------------------------------*/
-        public static List<zakaz> Getzakaz()
+        public static List<zakaz> Getzakaz()//Наименование метода не соответствует принятому в коммьюнити С# стилю именования переменных
         {
             List<zakaz> users = new List<zakaz>(DBconnection.connection.zakaz);
             List<zakaz> userss = new List<zakaz>();
@@ -117,7 +117,7 @@ namespace ZakazBar
                 return false;
             }
         }
-        public static void Updatezakaz(int ID, zakaz users)
+        public static void Updatezakaz(int ID, zakaz users)//Наименование метода не соответствует принятому в коммьюнити С# стилю именования переменных
         {
 
             DBconnection.connection.zakaz.SingleOrDefault(t => t.ID == ID);
@@ -125,13 +125,13 @@ namespace ZakazBar
 
         }
 
-        public static void Deletezakaz(string name)
+        public static void Deletezakaz(string name)//Наименование метода не соответствует принятому в коммьюнити С# стилю именования переменных
         {
             zakaz deletALKO = DBconnection.connection.zakaz.FirstOrDefault<zakaz>(p => p.item == name);
             DBconnection.connection.zakaz.Remove(deletALKO);
             DBconnection.connection.SaveChanges();
         }
-        public static void Deletezakaz(int id)
+        public static void Deletezakaz(int id)//Наименование метода не соответствует принятому в коммьюнити С# стилю именования переменных
         {
             zakaz deletAuto = DBconnection.connection.zakaz.FirstOrDefault<zakaz>(p => p.ID == id);
             DBconnection.connection.zakaz.Remove(deletAuto);
